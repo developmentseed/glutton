@@ -1,0 +1,4 @@
+core = "7.x"
+name=Glutton
+description=A Feeds file fetcher that fetches a single file or files from a single directory as often as desired. Useful testing web sites under heavy content load.
+dependencies[] = feeds

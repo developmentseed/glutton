@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implementation of hook_feeds_plugins().
+ */
+function glutton_feeds_plugins() {
+  $info = array();
+  $info['GluttonFetcher'] = array(
+    'name' => 'Glutton Fetcher',
+    'description' => 'Fetches a single file or files from a single directory as often as desired. Useful testing web sites under heavy content load.',
+    'handler' => array(
+      'parent' => 'FeedsFileFetcher',
+      'class' => 'GluttonFetcher',
+      'file' => 'GluttonFetcher.inc',
+      'path' => drupal_get_path('module', 'glutton'),
+    ),
+  );
+  return $info;
+}
