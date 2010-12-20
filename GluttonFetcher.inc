@@ -30,7 +30,7 @@ class GluttonFetcher extends FeedsFileFetcher {
     // As long as there are files, return a result.
     if (count($state->files)) {
       $file = array_shift($state->files);
-      $state->progress($state->total, $state->total - count($state->files) + ($state->one_time_total * $state->fetch_counter));
+      $state->progress($state->total, ($state->one_time_total * $state->fetch_counter) - count($state->files));
       return new FeedsFileFetcherResult($file);
     }
 
