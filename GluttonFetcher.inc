@@ -8,10 +8,10 @@ class GluttonFetcher extends FeedsFileFetcher {
   /**
    * Implements FeedsFetcher::fetch().
    */
-  public function fetch(FeedsSource $source) {
-    $source_config = $source->getConfigFor($this);
+  public function fetch(FeedsSource $feeds_source) {
+    $source_config = $feeds_source->getConfigFor($this);
     $source = $source_config['source'];
-    $state = $source->state(FEEDS_FETCH);
+    $state = $feeds_source->state(FEEDS_FETCH);
 
     // Initial call: set up the fetch counter and totals.
     if (!isset($state->fetch_counter)) {
